@@ -61,7 +61,7 @@ public class student_test {
 		
 	 student s1=new student();
 	 
-	 s1.setName("VISHAL");
+	 s1.setName("hemant");
 	 
 	 s1.setAge(19);
 	 
@@ -69,11 +69,11 @@ public class student_test {
 	 
      student s2=new student();
 	 
-	 s2.setName("SOHAM");
+	 s2.setName("nimesh");
 	 
-	 s2.setAge(12);
+	 s2.setAge(18);
 	 
-	 s2.setRollno(22);
+	 s2.setRollno(69);
 	 
 	 s.save(s1);
 	 
@@ -199,7 +199,7 @@ public class student_test {
 		
 	 student s1=new student();
 	 
-	 s1.setName("VISHAL");
+	 s1.setName("hemant");
 	 
 	 s1.setAge(19);
 	 
@@ -207,7 +207,7 @@ public class student_test {
 	 
      student s2=new student();
 	 
-	 s2.setName("SOHAM");
+	 s2.setName("jose");
 	 
 	 s2.setAge(12);
 	 
@@ -215,7 +215,7 @@ public class student_test {
 	 
 	  student s3=new student();
 		 
-	  s3.setName("OM");
+	  s3.setName("saloni");
 		 
 	  s3.setAge(15);
 		 
@@ -361,11 +361,11 @@ public class account_test {
 		
 		account a1=new account();
 		
-		a1.setAccountname("Ajay");
+		a1.setAccountname("nimesh");
 		
 		a1.setAccounttype("Current");
 		
-		a1.setAccountno(454567);
+		a1.setAccountno(595959);
 		
 		s.save(a1);
 		
