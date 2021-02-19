@@ -1,0 +1,2052 @@
+Q1)
+#include<stdio.h>
+#include<stdlib.h>
+
+struct student
+{
+ char name[20];
+ int rollno;
+};
+int main()
+{
+    struct student s1;
+    strcpy(s1.name,"nimesh");
+    s1.rollno=54;
+    printf("name : %s,rollno : %d",s1.name,s1.rollno);
+   
+    
+}
+==============================================================================================================================
+Q2)
+#include<stdio.h>
+#include<string.h>
+
+struct student
+ {
+     int rollno;
+     char name[30];
+     
+ };
+ 
+int main()
+{
+    struct student *s1,s;
+    s1=&s;
+    
+    s1->rollno=20;
+    strcpy(s1->name,"Rahul");         
+
+    printf("rollno :%d\n",s1->rollno);
+    printf("name : %s\n",s1->name);
+    
+}
+=========================================================================================================================
+Q3)
+#include<stdio.h>
+
+struct employee
+{
+	int eid;
+	char name[20];
+	char city[20];
+};
+
+int main()
+{
+	struct employee e[3];
+	char nm[20];
+	char cy[20];
+	int i;
+	for(i=0;i<3;i++);
+	{
+		printf("enter id :");
+		scanf("%d",&e[i].eid);
+		
+		fflush (stdin);
+		printf("enter name :");
+		gets(nm);
+		strcpy(e[i].name,nm);
+		
+		fflush (stdin);
+		printf("enter city :");
+		gets(cy);
+		strcpy(e[i].city,cy);
+		fflush(stdin);
+	}
+	
+	for(i=0;i<3;i++);
+	{
+		printf("id:%d, name:%s ,city:%s\n",e[i].eid,e[i].name,e[i].city);
+	}
+}
+============================================================================================================================================
+Q4)
+#include<stdio.h>
+
+int main()
+{ 
+ float num[]={1.2,1.3,1.4};
+ float *p=num;
+ 
+ int i;
+ for(i=0;i<3;i++)
+ {
+ 	printf("%.2f\t",*(p+i));n
+ }
+}
+==========================================================================================================================================================
+Q5
+#include<stdio.h>
+
+int main()
+{
+	int *p;
+	
+	p=(int*)malloc(sizeof(int));
+	
+	*p=400;
+	
+	printf("value : %d",*p);
+	
+	free(p);
+}
+=====================================================================================================================================================================
+Q6
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 7
+
+
+typedef struct st
+{
+int top;
+char elements[SIZE];
+}stack;
+
+
+void initialize(stack *sp)
+{
+sp->top=-1;
+}
+
+
+void push(stack *sp,int item)
+{
+if(is_full(sp))
+printf("\nstack overflow");
+else
+sp->elements[++sp->top]=item;
+}
+
+
+int pop(stack *sp)
+{
+int x;
+if(is_empty(sp))
+printf("\nstack underflow");
+else
+x=sp->elements[sp->top--];
+return x;
+}
+
+
+int is_full(stack *sp)
+{
+if(sp->top==SIZE-1)
+return 1;
+else
+return 0;
+}
+
+
+int is_empty(stack *sp)
+{
+if(sp->top== -1)
+return 1;
+else
+return 0;
+}
+
+
+int main()
+{
+stack s1;
+push(&s1,'N');
+push(&s1,'I');
+push(&s1,'M');
+push(&s1,'E');
+push(&s1,'S');
+push(&s1,'H');
+int i;
+for(i=s1.top;i!=-1;--i)
+{
+printf("%c",s1.elements[i]);
+}
+
+}
+==============================================================================================================================================================
+Q7
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+typedef struct queue
+
+{
+int front;
+int rear;
+double elements[SIZE];
+}queue;
+
+void initialize(queue *qp)
+{
+qp->front=-1;
+qp->rear=-1;
+}
+void add(queue *qp,double item)
+{
+if(qp->rear==SIZE-1)
+printf("\nqueue overflow");
+else
+{
+if(qp->front == -1)
+qp->front=0;
+qp->elements[++qp->rear]=item;
+}
+}
+int rem(queue *qp)
+{
+char x;
+if(qp->front==-1)
+printf("\nqueue underflow");
+else
+x=qp->elements[qp->front++];
+return x;
+}
+
+void display(queue *qp)
+{
+ int i;
+ for(i=qp->front;i<=qp->rear;i++)
+  {
+    printf("double values : %lf\n",qp->elements[i]);
+  }
+}
+
+int main()
+{
+queue *qp;
+qp=(queue*)malloc(sizeof(queue));
+
+initialize(qp);
+add(qp,1);
+add(qp,2);
+add(qp,3);
+add(qp,4);
+add(qp,5);
+display(qp);
+}
+==================================================================================================================================================
+Q8
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 3
+
+ 
+
+typedef struct a_st
+{
+    int Atop;
+    char Aelements[SIZE];
+}A;
+
+ 
+
+typedef struct b_st
+{
+    int Btop;
+    int Belements[SIZE];
+}B;
+
+ 
+
+void Ainitialize(A *sp)
+{
+    sp->Atop=-1;
+}
+
+ 
+
+void Binitialize(B *sp)
+{
+    sp->Btop=-1;
+}
+
+ 
+
+void Apush(A *sp,char item)
+{
+    if(A_is_full(sp))
+    printf("\nstack overflow\n");
+    
+    else
+    sp->Aelements[++sp->Atop]=item;
+}
+
+ 
+
+void Bpush(B *sp,int item)
+{
+    if(B_is_full(sp))
+    printf("\nstack overflow\n");
+    
+    else
+    sp->Belements[++sp->Btop]=item;
+}
+
+ 
+
+int Apop(A *sp)
+{
+    int x;
+    
+    if(A_is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->Aelements[sp->Atop--];
+    
+    return x;
+}
+
+ 
+
+int Bpop(B *sp)
+{
+    int x;
+    
+    if(B_is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->Belements[sp->Btop--];
+    
+    return x;
+}
+
+ 
+
+int A_is_full(A*sp)
+{
+    if(sp->Atop == SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int B_is_full(B *sp)
+{
+    if(sp->Btop == SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int A_is_empty(A *sp)
+{
+    if(sp->Atop == -1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int B_is_empty(B *sp)
+{
+    if(sp->Btop == -1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+void A_display(A *sp)
+{
+    int i;
+    
+    for(i=sp->Atop;i!=-1;i--)
+    {
+        printf("%c",sp->Aelements[i]);
+    }
+    
+    printf("\n\n");
+}
+
+ 
+
+void B_display(B *sp)
+{
+    int i;
+    
+    for(i=sp->Btop;i!=-1;i--)
+    {
+        printf("%d",sp->Belements[i]);
+    }
+    
+    printf("\n\n");
+}
+
+ 
+
+int main()
+{
+     A a;
+    
+    Ainitialize(&a);
+    
+    Apush(&a,'a');
+    Apush(&a,'b');
+    Apush(&a,'c');
+    
+    A_display(&a);
+    
+    B b;
+    
+    Binitialize(&b);
+    
+    Bpush(&b,1);
+    Bpush(&b,2);
+    Bpush(&b,3);
+    
+    B_display(&b);
+    
+    
+}
+============================================================================================================================
+Q9
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+typedef struct queue
+
+{
+int front;
+int rear;
+double elements[SIZE];
+}queue;
+
+void initialize(queue *qp)
+{
+qp->front=-1;
+qp->rear=-1;
+}
+void add(queue *qp,double item)
+{
+if(qp->rear==SIZE-1)
+printf("\nqueue overflow");
+else
+{
+if(qp->front == -1)
+qp->front=0;
+qp->elements[++qp->rear]=item;
+}
+}
+int rem(queue *qp)
+{
+char x;
+if(qp->front==-1)
+printf("\nqueue underflow");
+else
+x=qp->elements[qp->front++];
+return x;
+}
+
+void display(queue *qp)
+{
+ int i;
+ for(i=qp->front;i<=qp->rear;i++)
+  {
+    printf("double values : %lf\n",qp->elements[i]);
+  }
+}
+
+int main()
+{
+queue *qp;
+qp=(queue*)malloc(sizeof(queue));
+
+initialize(qp);
+add(qp,1);
+add(qp,2);
+add(qp,3);
+add(qp,4);
+add(qp,5);
+display(qp);
+}
+=================================================================================================================
+Q10
+#include<stdio.h>
+#define SIZE 5
+ 
+typedef struct queue
+ 
+{
+   int front;
+   int rear;
+   int elements[SIZE];
+ 
+}queue;
+ 
+void initialize(queue *qp)
+{
+    qp->front=-1;
+    qp->rear=-1;
+}
+ 
+void add(queue *qp,int item)
+{
+    if(qp->rear==SIZE-1)
+    printf("\nqueue OVERFLOW");
+    else
+   
+    qp->elements[++qp->rear]=item;
+}
+int rem(queue*qp)
+{
+	char x;
+	if(qp->front==-1)
+	printf("\nqueue underflow");
+	else
+	x=qp->elements[qp->front++];
+	return x;
+}
+
+void display(queue *qp)
+{
+	int i;
+	for(i=qp->front;i<=qp->rear;i++)
+	{
+		printf("square values are :%d\n",(qp->elements[i])*(qp->elements[i]));
+	}
+}
+int main()
+{
+	queue *qp;
+	qp=(queue*)malloc(sizeof(queue));
+	initialize(qp);
+	add(qp,2);
+	add(qp,4);
+	add(qp,8);
+	add(qp,10);
+	
+	display(qp);
+}
+===============================================================================================================================================================
+Q11
+
+#include<stdio.h>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 26
+typedef struct 
+{
+	int top;
+	int elements[SIZE];
+}stack;
+
+
+void initialize(stack *sp)
+{
+	sp->top=-1;
+}
+
+//FOR ADDING VALUES TO IT
+void push(stack *sp,int item)
+{
+	if(sp->top == SIZE-1)
+	printf("\nstack overflow\n");
+	else
+	sp->elements[++sp->top]=item;   
+	
+}
+
+//OVERWRITTING
+int pop(stack *sp)
+{
+	int x;             //BECAUSE WE WANT TO RETURN BACK THE VALUE  
+	if(sp->top == -1)
+	printf("\nstack underflow");
+	else
+    x=sp->elements[sp->top--];
+    return x;
+}
+
+void display(stack *sp)
+{
+     int i;
+     
+     for(i=sp->top;i!=-1;i--)
+    {
+        printf("%c\n",sp->elements[i]);
+	}
+}
+int main()
+{	
+	stack s1;
+	
+	initialize(&s1);
+	
+	int i;
+	for(i=65;i<=90;i++)
+	{
+		push(&s1,i);
+	}
+    display(&s1);
+}
+===============================================================================================================================================================
+Q12
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+
+typedef struct Odd_st
+{
+int Atop;
+int Aelements[SIZE];
+}oddno;
+
+typedef struct Even_st 
+{
+int Btop;
+int Belements[SIZE];
+}evenno;
+
+void Ainitialize(oddno *s) 
+{
+s->Atop=-1;
+}
+void Binitialize(evenno *s)
+{
+s->Btop=-1;
+}
+
+void Apush(oddno *s,char item) 
+{
+if(A_is_full(s))
+printf("\nStack overflow\n");
+else
+s->Aelements[++s->Atop]=item;
+}
+void Bpush(evenno *s,int item) 
+{
+if(B_is_full(s))
+printf("\nStack overflow\n");
+else
+s->Belements[++s->Btop]=item;
+}
+
+
+int Apop(oddno *s) 
+{
+int x;
+if(A_is_empty(s))
+printf("\nStack underflow");
+else
+x=s->Aelements[s->Atop--];
+
+return x;
+} 
+int Bpop(evenno *s)
+{
+int x;
+if(B_is_empty(s))
+printf("\nStack underflow");
+else
+x=s->Belements[s->Btop--];
+
+return x; 
+}
+
+int A_is_full(oddno*s) 
+{
+if(s->Atop == SIZE-1)
+
+return 1; 
+else
+return 0;
+}
+
+int B_is_full(evenno *s) 
+{
+if(s->Btop == SIZE-1)
+return 1;
+else
+return 0;
+}
+
+int A_is_empty(oddno *s) 
+{
+if(s->Atop == -1)
+return 1;
+else
+return 0;
+}
+
+ 
+int B_is_empty(evenno *s)
+{
+if(s->Btop == -1)
+return 1;
+else
+return 0;
+}
+
+void Adisplay(oddno *a)
+{
+	int x;
+	for(x=a->Atop;x!=-1;x--)
+	{
+		printf("ODD NO ARE : %d\n",a->Aelements[x]);
+	}
+}
+
+void Bdisplay(evenno *b)
+{
+	int x;
+	for(x=b->Btop;x!=-1;x--)
+	{
+		printf("EVEN NUMBER : %d\n",b->Belements[x]);
+	}
+}
+
+int main()
+{
+	oddno a;
+	evenno b;
+	
+	Ainitialize(&a);
+	Binitialize(&b);
+	
+	int i;
+
+	for(i=0;i<SIZE;i++)
+	{
+		int val=i%2;
+		switch(val)
+		{
+		case 1:
+		Apush(&a,i);
+		break;
+		
+		case 0:
+		Bpush(&b,i);
+		break;
+	    }
+    }
+    Adisplay(&a);
+    Bdisplay(&b);
+}
+====================================================================================================================================
+Q13
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define SIZE 5
+
+typedef struct a_st
+{
+	int Atop;
+	char Aelements[SIZE];	
+}A;
+typedef struct b_st
+{
+	int Btop;
+	char Belements[SIZE];	
+}B;
+
+
+void Ainitialize(A *sp)
+{
+	sp->Atop=-1;
+}
+void Binitialize(B *sp)
+{
+	sp->Btop=-1;
+}
+
+void Apush(A *sp,char item)
+{
+		if(A_is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->Aelements[++sp->Atop]=item;
+}
+void Bpush(B *sp,char item)
+{
+		if(B_is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->Belements[++sp->Btop]=item;
+}
+
+
+int Apop(A *sp)
+{
+	int x;
+	if(A_is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->Aelements[sp->Atop--];
+	return x;	
+}
+
+int A_is_full(A*sp)   
+{
+	if(sp->Atop == SIZE-1)      
+		return 1;
+	else
+		return 0;
+}
+int B_is_full(B*sp)   
+{
+	if(sp->Btop == SIZE-1)      
+		return 1;
+	else
+		return 0;
+}
+
+
+int A_is_empty(A *sp)   
+{
+	if(sp->Atop == -1)          
+		return 1;
+	else
+		return 0;	
+}
+int B_is_empty(B*sp)   
+{
+	if(sp->Btop == -1)          
+		return 1;
+	else
+		return 0;	
+}
+void A_display(A *sp)
+{
+	int i;
+	
+	for(i=sp->Atop;i!=-1;i--)
+	{
+		printf("%d ",sp->Aelements[i]);	
+	}	
+	printf("\n\n");
+}
+
+void B_display(B *sp)
+{
+	int i;
+	
+	for(i=sp->Btop;i!=-1;i--)
+	{
+		printf("%d ",sp->Belements[i]);	
+	}	
+	printf("\n\n");
+}
+
+int main()
+{
+	A a;
+	Ainitialize(&a);
+	B b;
+	Binitialize(&b);
+	int *p1;
+	p1=&a;
+	int i,j;
+	for(i=0;i<SIZE;i++)
+	{
+		printf("Enter Number :");
+		scanf("%d",&j);
+		Apush(&a,j);
+		Bpush(&b,j);
+	}
+	A_display(&a);
+	printf("\n");
+	B_display(&b);	
+}
+=====================================================================================================================================================
+Q14
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 7
+
+
+typedef struct st
+{
+    int top;
+    int elements[SIZE];
+}stack;
+
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+
+void push(stack *sp,int item)
+{
+    if(is_full(sp))
+    printf("\nstack overflow");
+    
+    else
+    sp->elements[++sp->top]=item;
+}
+
+
+int pop(stack *sp)
+{
+    int x;
+    
+    if(is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->elements[sp->top--];
+    
+    return x;
+}
+
+
+int is_full(stack *sp)
+{
+    if(sp->top==SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+int is_empty(stack *sp)
+{
+    if(sp->top==-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+void display(stack *sp)
+{
+    int i;
+    
+    for(i=sp->top;i!=-1;i++)
+    {
+        printf("%d",sp->elements[i]);
+    }
+    
+    printf("\n");
+}
+
+
+int main()
+{
+    stack s1;
+    initialize(&s1);
+    
+    int i,j;
+    for(i=s1.top;i<4;i++)
+    {
+        printf("enter the number : ");
+        scanf("%d",&j);
+        push(&s1,j);
+    }
+    display(&s1);
+    
+}
+================================================================================================================================================
+Q15
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct nd
+{
+   char data;
+   struct nd *next;
+}node;
+
+typedef struct ls
+{
+   node *head,*tail;
+}list;
+
+node* createNode(char no)
+{
+   node *np;
+   np=(node*)malloc(sizeof(node));
+   if(np == NULL)
+{
+   printf("Memory not available");
+   exit(0);
+}
+   np->data=no;
+   np->next=NULL;
+   
+   return np;
+}
+
+void initalize(list *p)
+{
+   p->head = NULL;
+   p->tail = NULL;
+}
+
+void insertAtail(list *p,char x)
+{
+    node *np;
+    np = createNode(x);
+    if(p->head==NULL)
+    p->head = np;
+    else
+    p->tail->next = np;
+    p->tail = np;
+}
+
+void traverse(list *p)
+{
+   node *sp;
+   sp = p->head;
+   while(sp!=NULL)
+  {
+     printf("%c\n",sp->data);
+     sp=sp->next;
+  }
+}
+int main()
+{
+   list *p;
+   p = (list*) malloc(sizeof(list));
+   if(p == NULL)
+  {
+    printf("MEMORY UNVAVAILABLE");
+    exit(0);
+  }
+  initalize(p);
+  insertAtail(p,'A');
+  insertAtail(p,'B');
+  insertAtail(p,'C');
+  insertAtail(p,'D');
+  insertAtail(p,'E');
+  traverse(p);
+  
+  free(p);
+	
+		
+}
+===================================================================================
+Q.16 
+#include<stdio.h> 
+#include<stdlib.h>
+
+//MULTIPLE NODES
+ 
+typedef struct st
+ 
+{
+
+ 
+int data;
+
+ 
+struct nd *next;
+
+ 
+}node;
+
+ 
+typedef struct ls
+
+ 
+{
+
+ 
+node *head,*tail;
+
+ 
+}list;
+
+ 
+void initialize(list *s)
+
+ 
+{
+
+ 
+s->head = NULL;
+
+ 
+s->tail = NULL;
+
+ 
+}
+
+ 
+node* createnode(int x)
+
+ 
+{
+
+ 
+node *sp;
+
+ 
+sp = (node*)malloc(sizeof(node));
+
+ 
+if(sp == NULL)
+
+ 
+{
+
+ 
+printf("Memoy not avaliable");
+
+ 
+exit(0);
+
+ 
+}
+ 
+sp->data = x;
+
+ 
+sp->next = NULL;
+
+ 
+return sp;
+
+ 
+}
+
+ 
+void insertAtail(list *s,int x)
+
+ 
+{
+
+ 
+node *sp;
+
+ 
+sp=createnode(x);
+
+ 
+if(s->head==NULL)
+
+ 
+s->head=sp;
+
+ 
+else
+
+ 
+s->tail->next=sp;
+
+ 
+s->tail=sp;
+
+ 
+}
+
+ 
+void traverse(list *s)
+
+ 
+{
+
+ 
+node *p;
+
+ 
+p=s->head;
+
+ 
+while(p!=0)
+
+ 
+{
+
+ 
+printf("%d\n",p->data);
+
+ 
+p=p->next;
+
+ 
+}
+
+ 
+}
+
+ 
+int getnodes(list *s)
+
+ 
+{
+
+ 
+node *p;
+
+ 
+int count=0;
+
+ 
+for(p=s->head;p!=NULL;p=p->next)
+
+ 
+{
+
+ 
+++count;
+
+ 
+}
+
+ 
+return count;
+
+ 
+}
+
+ 
+int main()
+
+ 
+{
+
+ 
+list *s;
+
+ 
+s=(list*)malloc(sizeof(list));
+
+ 
+if(s == NULL)
+
+ 
+{
+
+ 
+printf("Memory not available");
+
+ 
+exit(0);
+
+ 
+}
+
+ 
+initialize(s);
+
+ 
+insertAtail(s,100);
+
+ 
+insertAtail(s,200);
+
+ 
+insertAtail(s,300);
+
+ 
+traverse(s);
+
+ 
+int count = getnodes(s);
+ 
+printf("NO. OF NODES : %d",count);
+
+ 
+}
+
+
+==========================================================================================
+Q.17 
+#include<stdio.h>
+#include<conio.h>
+
+ void main()
+{
+    char str[10]={'J','o','s','e','p','h','i','n','e'};
+    
+    char ch,flag;
+    
+    printf("\nEnter character  which is to be searched : ");
+    scanf("%c",&ch);
+    
+    int i;
+    for(i=0;i<10;i++)
+    {
+        if(str[i] == ch)
+        {
+            flag = i+1;
+            break;
+        }
+        
+        else
+        flag = 0;
+    }
+    
+    if(flag !=0)
+    {
+        printf("\ncharacter found at location %d\n",flag,ch);
+        
+    }
+    
+    else
+    {
+        printf("\ncharacter not found \n");
+    }
+}
+==================================================================================================================================
+Q.18
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct nd             
+{                           
+    char data;
+    struct nd *next;
+}node;
+
+typedef struct ls
+{
+	node *head,*tail;
+}list;
+
+node* createNode(char no)
+{
+    node *np;
+    
+    np=(node*)malloc(sizeof(node));  
+    
+    if(np == NULL)
+    {
+        printf("Memory not available");
+        exit(0);    
+    }
+    
+    np->data=no;
+    np->next=NULL;
+    
+    return np;
+}
+
+void initalize(list *p)
+{
+	p->head = NULL;
+	p->tail = NULL;
+}
+void insertAtail(list *p,char x)
+{
+	node *np;
+	np = createNode(x);
+	if(p->head==NULL)
+	p->head = np;
+	else
+	p->tail->next = np;
+	p->tail = np;
+}
+
+void traverse(list *p)
+{
+    node *sp;
+    int c=0;
+    sp=p->head;
+    printf("LIST IS :");
+    while(sp!=NULL)
+    {
+    	printf("%d ",sp->data);
+    	sp=sp->next;
+    	c++;
+	}
+	
+	int arr[c];
+	sp=p->head;
+	int i=c-1;
+	while(sp!=NULL)
+	{
+		arr[i]=sp->data;
+		sp=sp->next;
+		i--;
+	}
+	
+	printf("\nLINKED LIST IN REVERSE ORDER : ");
+	for(i=0;i<c;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+}
+int main()
+{    
+    list *p;
+    
+    p = (list*) malloc(sizeof(list));
+    
+    if(p == NULL)
+    {
+    	printf("MEMORY UNVAVAILABLE");
+    	exit(0);
+	}
+	
+	initalize(p);
+	insertAtail(p,'A');
+	insertAtail(p,'B');
+	insertAtail(p,'C');
+	insertAtail(p,'D');
+	insertAtail(p,'E');
+	
+	traverse(p);
+	
+	free(p);
+    
+}
+
+=================================================================================================================================
+Q.19 
+#include<stdio.h>
+#include<stdlib.h>
+//MULTIPLE NODES
+typedef struct st
+{
+	char data;
+	struct nd *next;
+}node;
+
+typedef struct ls
+{
+	node *head,*tail;
+}list;
+
+void initialize(list *s)
+{
+	s->head = NULL;
+	s->tail = NULL;
+}
+
+node* createnode(char* x)
+{
+	node *sp;
+	
+	sp = (node*)malloc(sizeof(node));
+	
+	if(sp == NULL)
+	{
+		printf("MEMORY UNAVAILABLE");
+		exit(0);
+	}
+	
+	sp->data = x;
+	sp->next = NULL;
+	
+	return sp;
+}
+
+void insertAtail(list *s,char *x)
+{
+	node *sp;
+	
+	sp=createnode(x);
+	if(s->head==NULL)
+	s->head=sp; 
+	else
+	s->tail->next=sp;
+	s->tail=sp;
+}
+
+void traverse(list *s)
+{
+	node *p;
+	
+	p=s->head->next;
+	
+	while(p!=0)
+	{
+		printf("%c\n",p->data);
+		p=p->next;
+	}
+}
+
+int main()
+{
+	list *s;
+	
+	s=(list*)malloc(sizeof(list));
+	
+	if(s == NULL)
+	{
+		printf("MEMORY UNAVAILABLE");
+		exit(0);
+	}
+	
+	initialize(s);
+	
+	insertAtail(s,'C');
+	insertAtail(s,'D');
+	insertAtail(s,'G');
+	
+	
+	traverse(s);
+}
+    
+=======================================================================================
+Q20
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char data[100][100],search[50];
+    int i,c=0;
+    for(i=0;i<3;i++)
+    {
+        printf("Enter City Name %d : = ",i+1);
+        scanf("%s",data[i]);
+    }
+    printf("\nCity Name are:\n");
+    for(i=0;i<3;i++)
+    {
+        printf("%s\t",data[i]);
+    }
+    printf("\n\nEnter Name to be Searched: ");
+    scanf("%s",search);
+    for(i=0;i<3;i++)
+    {
+        if(strcmp(data[i],search)==0)
+        {
+            c=1;
+            break;
+        }
+    }
+    if(c==1)
+        printf("\n%s Found at Position '%d'",data[i],i+1);
+    else
+        printf("\n%s NOT Present in Above Array",data[i]);
+    return 0;
+}
+========================================================================================================================================================
+Q21
+#include<stdio.h>
+#include<conio.h>
+
+ void main()
+{
+	int arr[5]={10,20,30,40};
+	
+	int item,flag;
+	
+	printf("\nEnter no   which is to be searched : ");
+	scanf("%d",&item);
+	
+	int i;
+	for(i=0;i<10;i++)
+	{
+		if(arr[i] == item)
+		{
+			flag = i+1;
+			break;
+		}
+		
+		else
+		flag = 0;
+	}
+	
+	if(flag !=0)
+	{
+		printf("\n found at location %d\n",flag,item);
+		
+	}
+	
+	else
+	{
+		printf("\nNo not found \n");
+	}
+}
+================================================================================================
+Q.22 
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+	char name[5][10], s[10];
+	int i;
+	for(i=0; i<5; i++)
+	{
+		printf("enter name : ");
+		gets(name[i]);
+	}
+	
+	printf("enter name to search : ");
+	gets(s);
+	
+	for(i=0;i<5;i++)
+	{
+		if(strcmpi(s,name[i])==0)
+		{
+			printf("found");
+			break;
+		}
+		
+		else(i==5);
+		
+	    printf("not found");
+	    break;
+    }
+	
+}
+=====================================================================================================================================
+Q.23 
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int n, array[1000], c, d, t;
+	
+	printf("enter number of elements\n");
+	scanf("%d",&n);
+	
+	printf("enter %d integers\n", n);
+	
+	for(c=0; c < n; c++)
+	{
+		scanf("%d", &array[c]);
+	}
+	
+	for(c = 1; c <= n-1; c++)
+	{
+		d = c;
+		
+		while (d > 0 && array[d] < array[d-1])
+		{
+			t=array[d];
+			array[d]=array[d-1];
+			array[d-1]=t;
+			
+			d--;
+		}
+	}
+	
+	printf("sorted list in accending order :\n");
+	
+	for(c=0;c<=n-1;c++)
+	{
+		printf("%d\n",array[c]);
+	}
+	getch();
+}
+====================================================================================================================
+Q24
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct tr
+{
+  char data;
+  struct tr *left;
+  struct tr *right;
+}tree;
+
+ tree* createnode(char ch)
+{
+  tree *n;
+  n=(tree*)malloc(sizeof(tree));
+  n->data=ch;
+  n->left=NULL;
+  n->right=NULL;
+  return n;
+}
+
+int main()
+{
+  tree *root,*n1,*n2;
+  root = createnode('A');
+  n1=createnode('B');
+  n2=createnode('C');
+  root->left=n1;
+  root->right=n2;
+
+  printf("\t%c\n",root->data);
+  printf("%c\t",root->left->data);
+  printf("\t%c\n",root->right->data);
+
+}
+=======================================================================================================================================
+Q25
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+ 
+
+typedef struct nd
+{
+    char data[3][10];
+    struct nd *left;
+    struct nd *right;
+}tree;
+
+ 
+
+tree* createnode(char* no)
+{
+    tree *np;
+    
+    np = (tree*)malloc(sizeof(tree));
+    
+    if(np == NULL)
+    {
+        printf("MEMORY UNAVAILABLE");
+        exit(0);
+    }
+    
+    strcpy(np->data,no);
+    np->left = NULL;
+    np->right = NULL;
+    
+    return np;
+}
+
+ 
+
+void preorderTraversal(tree* root)
+{
+    if(root == NULL)
+    return;
+    printf("%s->",root->data);
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}
+
+ 
+
+int main()
+{
+    tree *root,*n,*m;
+    
+    root = createnode("COLOUR");
+    n = createnode("RED");
+    m = createnode("GREEN");
+
+ 
+
+    root->left = n;
+    root->right = m;
+    
+    printf("ROOT NODE = %s\n",root->data);
+    printf("LEFT NODE = %s\n",root->left->data);
+    printf("RIGHT NODE = %s\n",root->right->data);
+
+ 
+
+    printf("\n");
+    
+    preorderTraversal(root);
+
+ 
+
+}
+    
+===================================================================================================================
+Q26
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 3
+typedef struct nd             
+{                           
+    char data;
+    struct nd *next;
+}node;
+
+typedef struct st
+{
+    int top;
+    int elements[3];    
+}stack;
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+node* createNode(int no)
+{
+    node *np;
+    
+    np=(node*)malloc(sizeof(node));  
+    
+    if(np == NULL)
+    {
+        printf("Memory not available");
+        exit(0);    
+    }
+    
+    np->data=no;
+    np->next=NULL;
+    
+    return np;
+}
+
+void push(stack *sp,int a)
+{
+        if(sp->top == SIZE-1)    
+            printf("\nStack overflow\n");
+        else
+            sp->elements[++sp->top]=a;
+}
+
+void display(stack *sp)
+{
+    int i;
+    printf("REVERSE ORDER :\n");
+    for(i=sp->top;i!=-1;i--)
+    {
+        printf("%d ",sp->elements[i]);    
+    }    
+}
+
+int main()
+{    
+    node *p,*head,*tail,*ptr;    
+    
+    stack s1;
+    
+    initialize(&s1);
+    
+    head=createNode(10);  
+    tail=head;
+    p=createNode(20);    
+    
+    tail->next=p;  
+    tail=tail->next;
+   
+    p=createNode(30);    
+    
+    tail->next=p;       
+    tail=tail->next;
+    
+    ptr=head;
+    printf("LIST ORDER :\n");
+    while(ptr!=NULL)
+    {
+        printf("%d ",ptr->data);
+        int a=ptr->data;
+        push(&s1,a);
+        ptr=ptr->next;
+    }
+    printf("\n");
+    
+    display(&s1);
+}
+=====================================================================================================================================================
+Q27
+#include<stdio.h>
+
+int main()
+{
+	int ad[3][3];
+	
+	int age;
+	
+	int i,j;
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			if(i==0 && j==1)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else if(i==1 && j==1)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else if(i==1 && j==2)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else
+			{
+				ad[i][j]=0;
+			}
+		}
+		
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		for(i=0;i<3;i++)
+		{
+			printf("%d\t",ad[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+}
+=================================================================================================
+Q28
+
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct st
+{
+	int key;
+	struct st *left;
+	struct st *right;
+}node;
+
+node *newnode(int data)
+{
+	node *t;
+	t=(node*)malloc(sizeof(node));
+	t->key = data;
+	t->left = NULL;
+	t->right = NULL;
+	
+	return t;
+}
+
+node* insert(node *nd,int data)
+{
+	if(nd == NULL)
+	return newnode(data);
+	
+	if(data < nd->key)               //data compared to key of root
+	nd->left = insert(nd->left,data);
+	
+	else if(data > nd->key)           //data compared to key of root
+	nd->right = insert(nd->right,data);
+	
+	return nd;
+}
+
+void inorder(node* root)
+{
+	if(root == NULL)
+	return ;
+	inorder(root->left);
+	printf("%d\t",root->key);
+	inorder(root->right);
+}
+
+int main()
+{
+	node *root = NULL;
+	root = insert(root,50);
+	insert(root,20);
+	insert(root,34);
+	insert(root,43);
+	insert(root,21);
+	insert(root,67);
+	
+	inorder(root);
+}
+
+==================================================================================================================================
+Q29
+#include <stdio.h>
+
+int binarySearch(int a[], int beg, int end, int item)   
+{                                                      
+    int mid;  
+    if(end >= beg)   
+    {     
+        mid = (beg + end)/2;  
+        if(a[mid] == item)    
+        {  
+            return mid+1;     
+        }  
+        else if(a[mid] > item)   
+        {  
+            return binarySearch(a,mid+1,end,item);  
+        }  
+        else   
+        {  
+            return binarySearch(a,beg,mid-1,item);  
+        }  
+      
+   }  
+    return -1;   
+}  
+
+int main()
+{
+    int  i, j, temp;
+    int first, last, middle,search,arr[10],location=-1;
+    
+    printf("INTEGERS : \n",10);
+
+
+  for (i=0;i<10;i++)
+    scanf("%d", &arr[i]);
+      for (i=0;i<10;i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    
+  for (i=0;i<10;i++)
+  {
+    for (j=i-1 ;j<10;j++)
+    {
+      if (arr[j] < arr[i]) 
+      {
+        temp=arr[j];
+        arr[j]=arr[i];
+        arr[i]=temp;
+      }
+    }
+  }
+    printf("\nDESCENDING ORDER:\n");
+    for (i=0;i<10;i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n\n");
+
+    printf("Enter value to find\n");
+    scanf("%d", &search);
+    
+    location = binarySearch(arr, 0, 9, search); 
+     
+          if(location != -1)   
+    {  
+        printf("ITEM FOUND %d",location);  
+    }  
+    else  
+    {  
+        printf("ITEM NOT FOUND");  
+    } 
+}

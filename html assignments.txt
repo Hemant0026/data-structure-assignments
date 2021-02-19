@@ -1,0 +1,1609 @@
+1.Create a Table of 3 columns and 4 records . Headings are : Sno, Name, Photo.
+-->
+<html>
+<head>
+<title>ASS1</title>
+</head>
+<body>
+    <table border="5">
+    <caption>Student Information</caption>
+ <tr>
+     <th>srno</th>  
+     <th>Name</th>
+     <th>Photo</th>
+</tr>
+     <tr>
+         <td>201</td>
+         <td>Rahul</td>
+         <td><img src="Rahul.jsp" alt="Rahul" width="100" height="100"></td>
+    </tr>
+        
+        <tr>
+         <td>202</td>
+         <td>Roy</td>
+         <td><img src="Roy.jpg" alt="Roy" width="100" height="100"></td>
+    </tr>
+        
+        <tr>
+         <td>203</td>
+         <td>Abhi</td>
+         <td><img src="Abhi.jpg" alt="Abhi" width="100" height="100"></td>
+    </tr>
+        
+        <tr>
+         <td>204</td>
+         <td>Amar</td>
+         <td><img src="Amar.jpg" alt="Amar" width="100" height="100"></td>
+    </tr>
+    
+    </table>
+</body>
+</html>
+=================================================================================================================================================================
+2.Create a hyperlink on the web page and this link will switch to other webpage. In second page there is a link as "Back" which will display the first page.
+-->
+1)
+<html>
+<body>
+<h1>Webpages</h1>    
+    
+    <a href="ASS2b.html">Click</a>
+    
+  <h1>first page</h1>
+</body>
+</html>
+--------
+2)
+<html>
+<body>
+<h1>Webpages</h1>    
+    
+    <a href="ASS2b.html">Back</a>
+        
+  <h1>second page</h1>
+</body>
+</html>
+============================================================================================================================================================
+3.Create a Paragraph and apply the tags on this paragraph : bold,italic,underline, Mark, strike ,superscript and subscript, emphasis,strong,big.
+-->
+<html>
+<head>
+    <title>My Page</title>
+</head>
+    <body>
+    <p>A <b>paragraph</b> is a series of <i>related sentences developing a central idea, called the topic.</i><u>Try to think about paragraphs </u>in terms of X<sup>3</sup> -Y<sub>2</sub>thematic unity: a<em>paragraph is a sentence or a group</em> of sentences that supports one central, unified idea. Paragraphs add one <strike>idea at a time to your broader argument.</strike> All in all, a strong and coherent <strong>paragraph starts and ends</strong> itself, and so there's no need to count<big>paragraphs when the argument</big> is clear and <mark>directed to the comapany</mark></p>
+    </body>
+</html>
+===============================================================================================================================================================
+4.Create an image in the web page which has the width as 300 and height as 400 and display the title as "MyImage". Create same image as a hyperlink , clicking on the image will 
+  show the description about the image.
+  -->
+  1)
+  <html>
+<body>
+   
+    <a href="Ass4a.html" title="MyImage" target="_blank"><img src="https://www.telegraph.co.uk/content/dam/films/2016/12/13/Despicable-Me-minions_trans_NvBQzQNjv4Bqhm8Nz2Lbt1QJYKnO-tr9uzz_Mk7wtUGQFBg0u5IWSyU.jpg?impolicy=logo-overlay" style="width:300;height: 400" border=5></a>  
+    
+</body>
+</html>
+----------
+2)
+<html>
+<body style="color: blue">
+    
+    <p>Friendship is a relationship of mutual affection between people. It is a stronger form of interpersonal bond than an association, and has been studied in academic fields such as communication, sociology, social psychology, anthropology, and philosophy.</p>
+    
+</body>
+</html>
+=========================================================================================================================================
+5.Create a list of 3 website names and create every list item as a hyperlink.  
+-->
+<html>
+<head>
+
+</head>
+<body>     
+    <li>
+    <a href="https://www.google.com/">www.google.com</a>
+    </li>
+    
+     <li>
+    <a href="https://github.com/">www.github.com</a>
+    </li>
+    
+       <li>
+    <a href="https://outlook.office.com">www.outlook.com</a>
+    </li>
+</body>
+</html>
+======================================================================================================================================================================
+6.Create a HomePage where a unorderd list is created in which the list items are the hyperlinks . On clicking a hyperlink the respective page should open.
+-->
+page1.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+<pre>
+
+Hi This is Page1
+
+</pre>
+
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
+----------
+page2.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+<img alt="" src="https://d1nslcd7m2225b.cloudfront.net/Pictures/1024x536/2/4/4/1230244_Minions+3.jpg">
+
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
+----------
+header.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<header>
+
+<p>
+
+This is the header.jsp
+
+</p>
+
+</header>
+</body>
+</html>
+------------
+footer.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<footer>
+<p style="text=align: center;">
+created@Jan 2021
+
+</p>
+
+</footer>
+</body>
+</html>
+-----------
+Style.css
+
+@charset "ISO-8859-1";
+
+header
+        {
+            background-color: aquamarine;
+        }
+    
+        
+         footer
+        {
+            background-color: blue;
+        }
+-----------
+home.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <ul>
+         
+               <li>
+               
+                <a href="page1.jsp">page1 Click</a>
+   
+               </li>
+               
+                <li>
+               
+                <a href="page2.jsp">page2 Click</a>
+   
+               </li>
+          
+                <li>
+               
+                <a href="header.jsp">header Click</a>
+   
+               </li>
+         
+                <li>
+               
+                <a href="footer.jsp">footer Click</a>
+   
+               </li>
+    mk
+         </ul>
+</body>
+</html>
+=================================================================================================================================================
+7 Create a LoginPage in which background color of textbox should be skyblue. Placeholder should be applied and password length must be atleast 8 characters.
+-->
+<html>
+<head>
+    </head>
+<body>
+  <form>      
+<b>
+
+USERNAME<input style="background-color: skyblue" type="text" placeholder="Enter username" >
+<br>
+
+PASSWORD<input style="background-color: skyblue" type="password" placeholder="Enter password" minlength="8" ">
+<br>
+
+<input type="submit" value="SUBMIT"><input type="reset" value="CLEAR" >
+
+</b>
+ 
+</form>  
+    
+</body>
+</html>
+
+====================================================================================================================================================================
+
+8 Make a page where create a selection box of cities and a textarea where the information about city is to be entered. Once click on submit button the data is to be 
+  stored in the database table as City along with description.
+  
+  htmlASS8.html
+  
+  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="HtmlASS8">
+<table border="4">
+<tr><td>CITY</td><td> 
+<select name="cy" autofocus multiple>
+<option selected>Select city...</option>
+<option>PUNE</option>    
+<option>MUMBAI</option>
+<option>SOLAPUR</option> 
+</select></td></tr>
+<tr><td>DESCRIPTION</td></tr>
+<tr><td><textarea rows="4" cols="4" style="resize:none;width: 300px;height: 300px" name="ds" ></textarea></td></tr>
+
+<tr><td><input type="submit"></td></tr>
+
+</table>
+</form>
+</body>
+</html>
+
+-------------------
+HtmlASS8.java
+
+package orb.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HtmlASS8 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		
+		PrintWriter pw = response.getWriter();
+	    
+		String city[] = request.getParameterValues("cy");
+		
+		String desc = request.getParameter("ds");
+	    
+	    try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+			
+			Statement st = cn.createStatement();
+			
+			if(city!=null)
+			{
+                 for(int i=0;i<city.length;i++)
+                 {
+                	 
+			     String query ="insert into ser values('"+city[i]+"','"+desc+"')";
+			    
+			     int k = st.executeUpdate(query);
+                 }
+			
+			}
+			else
+			{
+				pw.print("NOT SELECTED");
+			}
+			
+			pw.print("<br>INSERTED SUCCSSFULLY........");
+		}
+	    catch(Exception ea)
+	    {
+	    	ea.printStackTrace();
+	    }
+		
+	
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=========================================================================================================================================================================
+9 Make an ordered list in reversed manner.
+-->
+
+<html>
+<body>
+<h1>students data</h1>
+<ol reversed>
+   <li>Saloni</li>
+   <li>Josephine</li>
+   <li>Nimesh</li>
+   <li>Vishal</li>
+   <li>Hemat</li>
+   <li>Abhishek</li>
+   <li>Nilesh</li>
+</ol>
+</body>
+</html>
+=====================================================================================================================================================
+10 Make a Page which includes contents of a text file in the middle of the page. Create two such pages and link them together using hyperlinks. Add some header and footer
+   in both pages where header background color should be pink and some text is displayed as heading. Footer will display the todays date in (dd-mm-yyyy) in red color in
+   center of the page.
+   =============================================================================================================================================================
+11 Make a form which accepts name and date of birth of a person and stores it in the database.Use date type to take date of birth.
+-->
+htmlASS11.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="htmlASS11">
+<fieldset>
+<legend>Details</legend>
+Fullname<input type="text" name="fn">
+dob<input type="date" name="da">
+<input type="submit" value="Enter">
+</fieldset>
+</form>
+</body>
+</html>
+
+-------------
+htmlASS11.java
+
+package orb.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class htmlASS11 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	response.setContentType("text/html");
+	String fnm = request.getParameter("fn");
+	
+	Date der = null;
+	
+	String d = request.getParameter("da");
+	
+	SimpleDateFormat ft1 = new SimpleDateFormat("yyyy-MM-dd");
+
+	PrintWriter pw = response.getWriter();
+	
+	try {
+		
+		der = ft1.parse(d);
+		
+		String str = ft1.format(der);
+		
+		pw.print(str);
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+		
+		Statement st = cn.createStatement();
+		
+		String query ="insert into detail values('"+fnm+"',date'"+d+"')";
+		
+		st.executeUpdate(query);
+		
+		pw.print("<br>Inserted Succssfully Into The Table");
+	}
+    catch(Exception ea)
+    {
+    	ea.printStackTrace();
+    }
+	
+}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+====================================================================================================================================================
+12 Create 3 input text boxes and a submit button. Apply the background color for all text boxes as pink using class selector and change the font color of the submit button
+    using the id selector.
+-->
+
+<html>
+<head>
+    
+<style>
+    
+    .c1
+    {
+        background-color: pink;
+        
+    }
+    
+    #id1
+    {
+          color: blue;
+    }
+    
+</style> 
+</head>
+<body>
+<form>
+      
+Enter Name<input type="text" class="c1"><br>
+
+Enter Age<input type="number" class="c1"><br>
+
+Enter Roll no<input type="number" class="c1"><br>
+    
+<input type="submit" value="SUBMIT" id="id1"><br>
+
+</form>  
+</body>
+</html>
+
+=======================================================================================================
+13 Create a group selector to set the padding (25px) of a division and a paragraph text.
+-->
+<html>
+
+ 
+
+    <head>
+    <style>
+        
+    div,p
+        {
+          padding: 25px;
+            
+        }    
+        
+    </style>
+    </head>
+    <body>
+        
+     <div>Welcome to my websites</div>
+        
+        <p>Hello World</p>
+</body>
+</html>
+
+========================================================================================================================================
+14 Create a division and set the left & top margin to 20px and 30px and also set the background color to green and padding to 50px.
+-->
+<html>
+<head>
+<style>
+div
+{
+margin-left: 20px;
+margin-top: 30px;
+background-color: green;
+padding: 50px;
+}
+</style>
+</head>
+<body>
+<div>Hello World</div>
+</body>
+</html>
+======================================================================================================================================================
+15 Make a table with collapse border and color of border is Blue and alignment of text should be bottom right. Background color of the heading should be pink . Font size
+   of text written inside table body is 20px.
+   -->
+   
+   
+    
+<html>
+<head>
+
+    <style>
+
+        table,th,td
+
+        {
+            border-collapse: collapse;
+            border: 2px solid blue;
+           text-align: right;
+            vertical-align: bottom;
+            padding: 20px;
+        }
+
+        th
+
+        {
+            background-color: pink;
+        }
+
+
+        tbody
+
+        {
+            font-size: 20px;
+        }
+
+    </style>
+
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nimesh</td>
+                    <td>Pune</td>
+                </tr>
+                <tr>
+                    <td>Umesh</td>
+                    <td>goa</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+-==================================================================================================================
+16 Take three integer variables in Javascript.Assign values to first two variables. Print the Sum in the Heading tag and console window.
+-->
+<html>
+<head>
+</head>
+    <body>
+        <h1>Sum</h1>
+        <script>
+     
+            
+            var x=2;
+            var y=3;
+            var sum=x+y;
+            
+            document.write("Sum :"+sum+"<br>");
+            console.log(sum);
+
+            
+        </script>
+        
+    </body>
+</html>
+===========================================================================================================================================
+17 Assign firstname & lastname and print the full name in the alert box.
+-->
+<html>
+<head>
+
+</head>
+<body>
+<script>
+    function fun()
+    {
+        var firstname="Nimesh";
+        var lastname="Udayan";
+        alert(firstname+" "+lastname);
+    }
+</script>
+    <button onclick="fun()">Click</button>
+</body>
+</html>
+
+===============================================================================================================================================================
+18 Display the image with the border 5px , Brown color and image should be displayed in the right of the page along with the Paragraph .Set the image width and heigth
+   to 150px and 150px.
+   -->
+   
+<html>
+
+<head>
+
+<style>
+
+    img
+
+    {
+        border: 5px solid brown;
+        width: 150px;
+        height: 150px;
+        border-color: brown;
+        float: right;
+    }
+
+</style>
+</head>
+<body>
+
+    <p>Friendship is a relationship of mutual affection between people. It is a stronger form of interpersonal bond than an association, and has been studied in academic fields such as communication, sociology, social psychology, anthropology, and philosophy</p>
+    <img src="image3.jpg">
+    <p>Friendship is a relationship of mutual affection between people. It is a stronger form of interpersonal bond than an association, and has been studied in academic fields such as communication, sociology, social psychology, anthropology, and philosophy</p>
+</body>
+</html>
+=======================================================================================================================================================
+19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
+   webpage should be displayed and all web pages should be linked to each other.
+   -->
+   
+   ==================================================================================================================================================================
+20 Create a form with 2 fields and set the Autofocus property to the first field.
+-->
+<html>
+
+<head>
+<style>
+
+</style>
+</head>
+<body>
+        <form>
+            First Name<input autofocus type="text"> <br>
+            Last Name<input type="text">
+            <input type="submit" value="Submit">
+        </form>
+</body>
+</html>
+========================================================================================================================================================================
+21 Create a Hyperlink and apply the linkcolor accordingly : 
+   Activelink : yellow
+   visitedLink: Green
+   -->
+   <html>
+    <head>
+        <style>
+          a:active
+            {
+                color: yellow;
+            }
+            
+            a:visited
+            {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+       <a href="page2.html">Click</a>
+    </body>
+</html>
+
+=========================================================================================================================================================
+22 Create a Javascript file which is included in HTML Page.In this file Assign Name , age and City of a person and display these values as a heading in Red color.
+============================================================================================================================================================
+23 Create a Javascript function which accepts a number and returns the cube of the number and print the cube.
+-->
+
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        function fun(num)
+        {
+            document.write("Cube : "+(num*num*num));
+        }
+        fun(2);
+    </script>
+</body>
+</html>
+
+=========================================================================================================================================================
+24 Make a function expression which returns the area of circle where PI should be defined as constant.
+-->
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+
+        const PI=3.14;
+        var radius=5;
+        var Area=PI*5*5;
+
+        var myfunction=function()
+        {
+            document.write("Area of Circle : "+Area);
+        }
+        myfunction();
+    </script>
+</body>
+</html>
+========================================================================================================================================================
+25 Make an integer array of 5 numbers in a function and print the average of array.
+-->
+<html>
+<body>
+<script>
+    function fun()
+    {
+      var ar = [20,33,18,22,25];
+      
+      var total=0; 
+      document.write("length of the array: "+ar.length);
+        
+      /*document.write("AVERAGE WILL BE : "+(ar[0]+ar[1]+ar[2]+a[3]+a[4])/ar.length);*/
+        
+        for(var i=0;i < ar.length;i++)
+            {
+                total+= ar[i];
+            }
+        
+        var avg= total / ar.length;
+        
+        console.log("Average of the array will be : "+avg);
+        
+        document.write("<br>"+"Average of the array will be : "+avg);
+    }
+    
+    fun();
+    
+</script>    
+    
+</body>
+</html>
+==================================================================================================================================================================
+26 Create an array of 5 names and print the last two names on creating subarray. Add a name in the 2nd index of the array and print array in reverse order.
+-->
+<html>
+<head>
+    
+</head>
+<body>
+    <script>
+        var Name=new Array("Nimesh","Shubham","Amar","Joy");
+        
+        document.write("<ol>");
+        document.write("<li>"+Name[0]+"</li>");
+        document.write("<li>"+Name[1]+"</li>");
+        document.write("<li>"+Name[2]+"</li>");
+        document.write("<li>"+Name[3]+"</li>");
+        document.write("</ol>");
+////////////////////////////////////////////////////////////
+        var subarray=Name.slice(-2)
+
+        document.write("<br>");
+        document.write(subarray);
+////////////////////////////////////////////////////////////
+
+        Name.splice(1,0,"Sid");
+
+        document.write("<ol>");
+        document.write("<li>"+Name[0]+"</li>");
+        document.write("<li>"+Name[1]+"</li>");
+        document.write("<li>"+Name[2]+"</li>");
+        document.write("<li>"+Name[3]+"</li>");
+        document.write("<li>"+Name[4]+"</li>");
+        document.write("</ol>");
+        
+////////////////////////////////////////////////////////
+
+        document.write("<br>");
+        document.write(Name.reverse());
+    </script>
+</body>
+</html>
+
+===============================================================================================================================================================
+27 Make an Object as person which has firstname and lastname and print the Full name in capital.
+-->
+<html>
+<head>
+</head>
+
+<body>
+    
+     <script>
+           
+            var person=
+                {
+                    "firstname": "nimesh",
+                    "lastname": "udayan",
+                }
+            
+            document.write(person.firstname.toUpperCase()+" "+person.lastname.toUpperCase());  
+                
+    </script>
+    
+</body>
+</html>
+=====================================================================================================================================================
+28 Create an array of 5 cities and print the city names in reverse order.
+-->
+
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+         var city=new Array("Pune","Mumbai","Chennai","Delhi","Kerala");
+        
+         document.write("<br>");
+        document.write(city.reverse());
+    </script>
+</body>
+</html>
+
+====================================================================================================================================================
+29 Take two numbers as input in the dialogbox and calculate sum and print it.
+-->
+
+<html>
+<body>
+    <h2>SUM OF NUMBERS IS : </h2>
+    <h2 id="id1"> </h2>
+<script>
+    
+    var ft = Number(prompt("ENTER NUMBER 1 : "));
+    
+    var lt = Number(prompt("ENTER NUMBER 2 : "));
+    
+    if(ft!=0 & lt!=0)
+        { 
+            var sum = ft + lt;
+            document.getElementById("id1").innerHTML=sum;
+        }
+    else
+    {
+            var msg = alert("PLEASE ENTER A NUMBER");
+            document.write(msg);
+    }
+    
+</script>    
+</body>
+</html>
+=======================================================================================================================================================
+30 Create a confirm box on giving some message.If User clicks Ok button , then background color of the body should be green, If user clicks on cancel button then 
+    background color should be red.
+    -->
+    <html>
+    <head>
+    </head>
+    <body>
+    
+        <h1 id="id1" ></h1>
+        
+       
+        <script>
+            var st=confirm("Are you confirm ?");
+            
+                     
+            if(st)
+                {
+                    var message="Welcome to my website" ;
+                   document.body.style.backgroundColor="green";
+                    document.getElementById("id1").innerHTML=message;
+                }
+            else
+                {
+                    var message="Please try again !";
+                     document.body.style.backgroundColor="Red";
+                    document.getElementById("id1").innerHTML=message;
+                    
+                }
+        </script>
+    </body>
+</html>
+
+
+================================================================================================================================================================
+31 Make a form in Javascript where 2 text boxes accept numbers. Create 4 buttons ADD,SUB,MUL,DIV. When clicked on a button display the Answer in Heading tag.
+-->
+<html>
+<head>
+</head>
+<body>
+    <h1 id="i1"></h1>
+
+    <form name="myform">
+
+        ENTER FIRST NUMBER : <input type="number" name="num1"><br>
+        <br>
+        ENTER SECOND NUMBER : <input type="number" name="num2"><br>
+        <br>
+
+        <input type="button" value="ADD" onclick="add()"><br>
+        <br>
+        <input type="button" value="SUB" onclick="sub()"><br>
+        <br>
+        <input type="button" value="MUL" onclick="mul()"><br>
+        <br>
+        <input type="button" value="DIV" onclick="div()"><br>
+        <div id="res"></div>
+        
+
+    </form>
+
+    <script>
+
+        function add()
+        {
+            var a=parseInt(document.myform.num1.value);
+            var b=parseInt(document.myform.num2.value);
+            var res=a+b;
+            
+            document.getElementById("i1").innerHTML=res;
+        }
+
+        function sub()
+      {
+         var a=parseInt(document.myform.num1.value);
+         var b=parseInt(document.myform.num2.value);
+         var res=a-b;
+          
+         document.getElementById("i1").innerHTML=res;
+      }
+
+        function mul()
+        {
+            var a=parseInt(document.myform.num1.value);
+            var b=parseInt(document.myform.num2.value);
+            var res=a*b;
+            
+            document.getElementById("i1").innerHTML=res;
+        }
+
+        function div()
+        {
+            var a=parseInt(document.myform.num1.value);
+            var b=parseInt(document.myform.num2.value);
+            var res=a/b;
+            
+            document.getElementById("i1").innerHTML=res;
+        }
+
+
+    </script>
+</body>
+</html>
+=============================================================================================================================================================
+32 Create a Registration form where name,age,city(select box),email and a submit button. Form should not be submitted if age is less than 18.
+-->
+<html>
+<head>
+
+  
+</head>
+<body>
+    <h2 id="i1"> </h2>
+    <h2 id="i2"> </h2>
+    <h2 id="i3"> </h2>
+    <h2 id="i4"> </h2>
+
+ 
+
+    
+    <form name="myform">
+    <center>
+    <table border="3">
+    <tr><td>NAME</td><td><input type="text" name="nm" required></td></tr>  
+    <tr><td>AGE</td><td><input type="number" name="ag" required></td></tr> 
+    <tr><td>CITY</td><td>
+    <select name="cy" multiple required>
+    <option selected>Select a city....</option>
+    <optgroup label="MAHARASHTRA">
+    <option value="PUNE">PUNE</option> 
+    <option value="MUMBAI">MUMBAI</option>
+    <option value="NAGPUR">NAGPUR</option>     
+    </optgroup>
+    </select></td></tr>
+    <tr><td>EMAIL</td><td><input type="email" name="em" required></td></tr> 
+    <tr><td><input type="button" onclick="fun()" value="GO"></td></tr>
+    </table>    
+    </center>
+    </form>
+    
+    <script>
+    function fun()
+        {
+            var nam = document.myform.nm.value;
+            var ag = document.myform.ag.value;
+            var city = document.myform.cy.value;
+            var ema = document.myform.em.value;
+            
+            if(ag >= 18)
+                {  
+                document.getElementById("i1").innerHTML=nam;         
+                document.getElementById("i2").innerHTML=ag;
+                document.getElementById("i3").innerHTML=city;
+                document.getElementById("i4").innerHTML=ema;
+                }
+            else
+            {
+               alert("FORM CANNOT BE SUBMITTED IF AGE IS LESS THAN 18");
+            }
+        }
+    
+    </script>
+</body>
+</html>
+=====================================================================================================================================================================
+33 Create a form to accept password and username .3 text boxes for Username, Password and Retype Password. If Both passwords are matched then only form should be 
+submitted and display the username in the servlet.
+
+======================================================================================================================================================================
+34 Create a JSON data which contains book information for three books. Access all the details of every book like bookid,booktitle,bookprice.
+-->
+<html>
+   
+    <head>
+    </head>
+   
+    <body>
+      
+        BOOK-1 : <span></span><br>
+        <br>
+         BookID : <span id="i1"></span><br>
+         BookTitle : <span id="i2"></span><br>
+         BookPrice : <span id="i3"></span><br>
+        <br>
+        <br>
+        
+        BOOK-2 : <span></span><br>
+        <br>
+         BookID : <span id="a1"></span><br>
+         BookTitle : <span id="a2"></span><br>
+         BookPrice : <span id="a3"></span><br>
+        <br>
+        <br>
+        
+        BOOK-3 : <span></span><br>
+        <br>
+         BookID : <span id="z1"></span><br>
+         BookTitle : <span id="z2"></span><br>
+         BookPrice : <span id="z3"></span><br>
+        <br>
+        <br>
+       
+             <script>
+           
+            var book1=    
+            {
+              "BookID": 201,
+              "BookTitle": "Harry Potter",
+              "BookPrice": 120         
+            }
+                                                       
+            
+             document.getElementById("i1").innerHTML=book1.BookID;
+             document.getElementById("i2").innerHTML=book1.BookTitle;
+             document.getElementById("i3").innerHTML=book1.BookPrice;     
+                 
+            var book2=        
+            {
+              "BookID": 202,
+              "BookTitle": "DC",
+              "BookPrice": 150         
+             }
+             document.getElementById("a1").innerHTML=book2.BookID;
+             document.getElementById("a2").innerHTML=book2.BookTitle;
+             document.getElementById("a3").innerHTML=book2.BookPrice;     
+           
+             var book3=    
+            {
+              "BookID": 203,
+              "BookTitle": "Marvel",
+              "BookPrice": 220        
+             }
+             
+             document.getElementById("z1").innerHTML=book3.BookID;
+             document.getElementById("z2").innerHTML=book3.BookTitle;
+             document.getElementById("z3").innerHTML=book3.BookPrice;     
+        </script>   
+    </body>
+</html>
+
+=====================================================================================================================================================================
+35 Create a Javascript object which has a property as StudentName,StudentSkills (Array) . Convert this object to JSON.
+   -->
+   <html>
+<head>
+</head>
+<body>
+    
+    <h2 id="i1"> </h2>
+    <h2 id="i2"> </h2>
+<script>
+
+    var student = {name : "Nimesh",
+                   skills :["Drawing","Hardworking","Painting"] 
+                  };
+    
+    var jsonstud = JSON.stringify(student);
+    
+    
+ var element = document.getElementById("i1").innerHTML=jsonstud;
+    
+    
+</script>
+</body>
+</html>
+======================================================================================================================================================================
+36 Create 3 buttons named as Red, Green, Blue. When clicked on any button the page background should be changed according to the button.
+-->
+<html>
+   
+    <head>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+       
+        <script>
+             $(document).ready(function(){
+          
+                              
+                $("button.c1").click(function(){
+               $("body").css("backgroundColor","red");
+             
+                });
+                                 
+                $("button.c2").click(function(){
+               $("body").css("backgroundColor","blue");
+             
+                });
+                
+                
+                   $("button.c3").click(function(){
+               $("body").css("backgroundColor","green");
+             
+                });      
+                
+             });
+            
+        </script>
+        </head>
+   
+    <body>
+   
+        <p></p>
+        <button class="c1">Red</button>
+          <button class="c2">Blue</button>
+          <button class="c3">Green</button>
+    </body>
+</html>
+==================================================================================================================================================================
+37 Create two buttons red and green .Change the font color of the first element of 2 unordered list according to button.
+-->
+<html>
+    
+    <head>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+        
+        <script>
+            $(document).ready(function(){
+           
+                  $(".rd").click(function(){
+                    
+                $("ul li:first-child").css("color","red");
+            
+                 }); 
+                
+                  $(".gn").click(function(){
+                
+                $("ul li:first-child").css("color","green");
+            
+                 }); 
+                          
+             });
+             
+        </script>
+        </head>
+    
+    <body>
+    <ul>
+       <li>nimesh</li>
+         <li>hemant</li>
+         <li>saloni</li>
+        
+        </ul>
+        
+        <ul>
+       <li>roma</li>
+         <li>abhi</li>
+         <li>saloni</li>
+        
+        
+        </ul>
+        <button class="rd">Red</button>
+          <button class="gn">Green</button>
+          
+    </body>
+</html>
+=============================================================================================================================================================
+38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
+-->
+
+<html>
+<head>
+<style>
+    #s1
+    {
+    color: green;
+    }
+    
+    #s2
+    {
+    color: red;
+    }
+</style>   
+</head>
+<body>
+   <script>
+   for(var i=1;i<=10;i++)
+       {
+         document.write("<table border='2'");
+         
+         if(i%2==0)
+             {
+         document.write("<tr id='s1'><td>"+i+"</td></tr>");  
+             }
+         else
+               {
+         document.write("<tr id='s2'><td>"+i+"</td></tr>");  
+               } 
+         document.write("</table>");
+       }
+    
+   </script> 
+    <table style="border-style: solid"></table>
+</body>
+</html>
+=======================================================================================================================================================================
+39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
+   and border width should be changed to 15px and color will be Red.
+  -->
+  <html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+img
+
+{
+border-style: solid;
+border-color: red;
+margin-top: 30px;
+
+}
+
+
+</style>
+<script>
+$(document).ready(function(){
+
+
+$("button").click(function(){
+$(".c1").animate({ width:"300px"}).animate({height:"350"}).animate({borderWidth:"15px"});
+
+
+
+});
+
+
+});
+</script>
+</head>
+<body>
+<img src="image3.jpg" class="c1" height="150px" width="150px">
+<button>Click</button>
+</body>
+</html>
+  ============================================================================================================================
+40 Make a paragraph and a button . When clicked on the button then paragraph color should be changed to red and then font size of the paragraph should be changed.
+-->
+<html>
+    
+    <head>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script>
+            $(document).ready(function(){
+           
+                 $("button").click(function(){
+               
+                    $(".c1").css({"color":"red","font-size":"40px"});
+                          
+               });
+                      
+             });
+             
+        </script>
+        </head>
+    
+    <body>
+   <p class="c1">Friendship is a relationship of mutual affection between people.</p>
+      <button>Click</button>    
+    </body>
+</html>
+=================================================================================================================================================================
+41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
+   when clicked again.
+   -->
+   <html>
+
+    <head>
+        <style>
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $(".togglebtn").click(function(){
+                    $("form").toggle();
+
+                });
+
+            });
+            
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <b>ENTER NAME<input type="text"></b>
+            <br>
+            <br>
+            <b>ENTER PASSWORD<input type="text"></b>
+            <br>            
+            <br>
+        </form>
+
+        <button class="togglebtn">Login</button>
+
+        <div></div>
+    </body>
+</html>
+   ====================================================================================================================================================================
+42 create div tag with predefined parameters : width :300px, height:300px ,backgroundcolor = red. When move the mouse over the division then height and width should be 
+   increased and color should be changed and when you leave the division area the original width , height and color should be displayed.
+   -->
+   <html>
+    <head>
+        <style>
+             div
+            {
+                background-color: red;
+                width: 300px;
+                height: 300px;    
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script>
+             $(document).ready(function(){
+               
+                 $("div").mouseenter(function(){
+                    $(".c1").animate(
+                        { 
+                            
+                            width:"+=40px",
+                            height:"+=140px",
+                
+           });
+                            
+                     $("div").mouseleave(function(){
+                    $(".c1").animate(
+                        { 
+                            
+                            width:"-=20px",
+                            height:"-=100px",
+                 
+           });
+                         
+                     $("div").hover(function(){
+                    $(this).css("backgroundColor","yellow")                       
+           });                    
+              });
+                 });
+                    });  
+        </script>
+        </head>
+    <body>
+        <hr>
+           <div class="c1"></div><br>      
+    </body>
+</html>
+   ======================================================================================================================================================
+43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
+-->
+
+
+
+======================================================================================================================================================================
+44 Create an Anonymous function in Typescript where function take firstname & lastname as parameters and returns the full name. Display fullname.
+  -->
+  var nam = function(x:string,y:string):string
+{
+    return x+y;
+}
+
+console.log(nam("Nimesh"," Udayan"));
+
+====================================================================================================================================================================
+45 Create an arrow function in typescript which accepts a number as a parameter and returns the square of a number.
+-->
+// 45 Ass
+// Arrow function
+ 
+var fn1= (x)=>console.log("Square : "+(x*x));
+fn1(5);
+
+============================================================================================================================================================================
+46 Make an anonymous function which accepts a number and calculates the factorial of the number and print it.
+==========================================================================================================================================================================
+47 Make a function which accepts two arguments as first name and last name, If lastname is not passed then default lastname should be displayed with firstname.
+===========================================================================================================================================================================
+48 Make a function with optional parameter. This function accepts only one parameter.
+-->
+//48 Ass
+// optional parameter
+function demo(n1) {
+    console.log("With one Parameter ..."+n1);
+}
+demo(20);
+==========================================================================================================================================================================
+49 Create a class Box. Create 3 properties as length,breadth and height of the box. Create a function which calculates the the volume of the box . A function display()
+   will display the volume along with the property values.
+   =======================================================================================================================================================================
+50 Create an Array of 5 integers and display the average using for..in loop.
+==========================================================================================================================================================================
+51 Create a tuple which has a string , number and boolean as a first ,second and third value. Display the array elements.
+-->
+let tp:[string,number,boolean];
+ 
+tp=["Rahul",5,true];
+console.log(tp[0]+" "+tp[1]+" "+tp[2]);
+=========================================================================================================================================================================
+52 Create two textboxes as name and age of a person in a component as a child of Root component.Create a button as submit. Once clicked on this button , some handler
+    should be called which will display the name and age in the alert box.
+    
+    =================================================================================================================================================================
+53 Create two components A and B which are the child of Root. Component A shows the text box with a button. Component B displays an unordered list of item.
+-->
+app.components.html
+
+<app-a></app-a>
+
+<app-b></app-b>
+
+------------------------
+a.components.html
+
+<input type="text">
+<button>SUBMIT</button>
+
+------------------------
+b.components.html
+
+<ul>
+
+    <li *ngFor="let item of name">{{item}}</li>
+ 
+</ul>
+------------------------
+b.components.ts
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-b',
+  templateUrl: './b.component.html',
+  styleUrls: ['./b.component.css']
+})
+export class BComponent  {
+
+  name=["Hemant","Roma","Saloni"];
+
+}
+
+====================================================================================================================================================================
+54 Create a Component which has 3 variables as rollno, name and Pass/Fail status(boolean). Assign  default values to these variables and print the values in the view
+    as a table format.
+    
+    =================================================================================================================================================================
+55 Accept two nos in a component from the text box. Make single button "Calculate". When button is pressed then Addition,Subtraction,Multiplication and division
+   should be displayed in the view.
+   
+   ====================================================================================================================================================================
+56 Create a textbox and a button in the component. Enter any string . If the string length is more than 5 characters Then a message should be displayed on the view
+    as "String is valid"
+   
+ ==================================================================================

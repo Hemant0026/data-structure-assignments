@@ -1,0 +1,333 @@
+Q.1 Create a table Result which stores the records of 5 students where the fields as rollno, name, percentage.
+
+create table Result(Name varchar2(50),Rollno number,Percentage number);
+insert into Result values('vishal',1,77);
+insert into Result values('Abhishek',2,93);
+insert into Result values('Nilesh',3,95);
+insert into Result values('Hemant',4,85);
+insert into Result values('Saloni',5,72);
+select * from Result;
+=====================================================================================
+Q.2 Add a column in the Result table named as Grade.
+
+alter table Result add Grade varchar2(50);
+=================================================================================
+Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
+
+=============================================================================================================================
+Q.4 Rename the table Result with StudentScore.
+
+ alter table Result rename to Student_score;
+===========================================================================================================================
+Q.5 Create two tables A and B where A has 3 columns and B has 2 columns , Copy last two columns from table A to Table B.
+
+create table A(rollno number,name varchar2(20),city varchar2(20));
+create table B(name varchar2(20),city varchar2(20));
+
+insert into A values(10,'Ram','Delhi');
+insert into A values(20,'Ram','Pune');
+insert into A values(30,'Roy','Kerala');
+
+insert into B values('Riya','Banglore');
+insert into B values('priya','Mumbai');
+
+select * from A;
+select * from B;
+
+
+insert into B(name,city)select name,city from A;
+ ====================================================================================
+ Q.6 Create a table which stores the information about a product . Fields are pid,pname,pqty,pcost. 
+     a) Display records in ascending order of quantity.  
+     b) Display records in descending order of product cost.
+     c) Display record for the product where the cost is highest.
+     d) Display the pid and pname of those products where the pcost is same.
+     
+    create table Product(pid number,pname varchar2(20),pqty_kg number,pcost_rs number);
+select * from product;
+
+insert into product values(201,'Rice',5,150);
+insert into product values(202,'Bread',2,75);
+insert into product values(203,'Wheat',5,120);
+insert into product values(204,'Oil',3,300);
+
+select * from product order by pqty_kg asc;
+select * from product order by pcost_rs desc;
+select * from product where  pcost_rs > 200;
+select pid,pname from product where pqty_kg = 5; 
+
+=====================================================================================
+Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
+
+create table customers(name varchar2(20),dod date,city varchar2(20));
+
+select * from customers
+
+insert all
+into customers(name,dod,city) values('Nimesh',date '2002-06-05','Pune')
+into customers(name,dod,city) values('Ram',date '2022-01-01','Kerala')
+into customers(name,dod,city) values('Umesh',date '2014-11-16','Delhi')
+into customers(name,dod,city) values('Roy',date '2012-12-25','UP')
+into customers(name,dod,city) values('Roma',date '1999-07-05','Banglore')
+
+select * from dual;
+====================================================================================================================
+Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
+
+create table emp3(name varchar2(15),salary number(5));
+
+select * from emp3;
+
+insert all
+into emp3(name,salary) values('Ram',19000)
+into emp3(name,salary) values('Roy',16000)
+into emp3(name,salary) values('Roma',14000)
+
+select *from dual;
+
+select * from emp3 order by salary desc;
+=====================================================================================================================================================
+Q.9 Update the highest salary of the employee in above question to the minimum of all.
+
+update emp3 set salary=10000 where name='Ram';
+====================================================================================================================================================
+Q.10 create a table employee: eid, age, dept, salary. Show name of dept with lowest salary using group by.
+
+create table Employee(eid number,age number,dept varchar2(20),salary number);
+
+insert all
+into employee(eid,age,dept,salary) values (101,26,'data',15000)
+into employee(eid,age,dept,salary) values (102,20,'data',19000)
+into employee(eid,age,dept,salary) values (103,25,'electrical',18000)
+into employee(eid,age,dept,salary) values (104,29,'electrical',11000)
+into employee(eid,age,dept,salary) values (105,24,'software',12000)
+into employee(eid,age,dept,salary) values (106,23,'software',16000)
+select * from dual;
+
+select * from Employee;
+
+select dept,min(salary) as "total salary" from Employee group by dept having min(salary)<19000;
+===============================================================================================================================================
+Q.11 Write a query to perform following operations on the table :
+      a) Create a table as Population :  State, popoulation
+      b) Find minimum population
+      c) Find maximum population
+      d) find average population
+      e) Display name of state population wise in descending order
+      f) Display name of state population wise in ascending order
+      
+      create table population(state varchar2(20), population varchar2(20));
+
+insert all
+into population(state,population) values('UP',110000000)
+into population(state,population) values('Maharashtra',34000000)
+into population(state,population) values('Punjab',15000000)
+into population(state,population) values('Kerala',21000000)
+
+select * from dual;
+
+select * from population;
+
+select state,min(population)as total_pop from population group by state having min(population)<20000000;
+select state,max(population)as total_pop from population group by state having max(population)>100000000;
+select avg(population)as total_pop from population;
+select * from population order by state desc;
+select * from population order by state asc;
+===================================================================================================================================================
+Q.12 Create a table ItemSales : Itemname, Sales, city  
+     Display the following output (Create a query which displays the Total sales citywise)
+     
+     create table Itemsales(Itemname varchar2(20),Sales varchar2(20),City varchar2(20));
+
+insert all
+into ItemSales(Itemname, Sales, City) values('RAM',4,'Pune')
+into ItemSales(Itemname, Sales, City) values(' Hard Disk',3,'Punjab')
+into ItemSales(Itemname, Sales, City) values('Mouse',1,'Delhi')
+into ItemSales(Itemname, Sales, City) values('Phone',4,'Mumbai')
+
+select * from dual;
+
+select *from ItemSales;
+
+select city, sum(Sales) as "Total_Sale" from  ItemSales group by city ;
+===========================================================================================================================================
+Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
+====================================================================================================================================================
+Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
+
+create table cus3(name varchar2(20),phone number,check (phone >=1000000000));
+
+insert into cus3 values('nimesh',5678767587);
+insert into cus3 values('umesh',5546778);
+
+select * from cus3;
+================================================================================================
+Q.15 Create a table person which stores the ID,name,email where define ID as primary key.Create another table Birthday which stores date of birth and ID.
+     Join both tables and create Foreign key in Birthday.
+     
+     create table Person(ID number,Name varchar2(20),email varchar2(20),primary key(ID));
+create table Birthday(dob date,ID number CONSTRAINT fk_ID REFERENCES Person1(ID));
+
+insert into Person values(201,'Nimesh','nimesh@gmail.com');
+insert into Person values(202,'Umesh','Umesh@gmail.com');
+insert into Person values(203,'Ramesh','Ramesh@gmail.com');
+insert into Person values(204,'Sumesh','Sumesh@gmail.com');
+
+select * from Person;
+
+insert into Birthday values(date'2002-6-5',201);
+insert into Birthday values(date'1999-11-3',202);
+insert into Birthday values(date'1999-7-5',203);
+insert into Birthday values(date'2001-6-14',204);
+
+select * from Birthday;
+
+select P.ID,P.Name,P.email,B.dob from Person P,Birthday B where P.ID=B.ID;
+=======================================================================================================================
+Q.16 Create a table where records of an employee is maintained . 
+     Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
+     Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
+     Join Both tables and Display output
+
+====================================================================================================================================
+Q.17  Create a table Students ---- Rollno( Primary Key ), 
+                                   Name (NOT NULL)
+  
+      Create a table College ----- CollegeId ( Primary Key ),
+                                   EnrollId (Foreign Key ), 
+                                   College Name,
+                                   AdmissionDate,
+                                   ContactNo
+
+  a) Join these tables and show the output as
+                                            RollNo  , Name , College Name , Admission Date , Contact No 
+  b) Remove Primary Key constraint from college
+  c) Input the details of 5 students for a differnt college
+  d)  Group all the students based on collegeName
+  
+  ==================================================================================================================================
+  Q.18 Create a table which stores PersonName(Not Null),Mobile(Unique),Address.  Create two views v1 and v2 on the table. v1 is read only but v2 is updatable.
+      v1 shows personName and Mobile while v2 shows PersonName and Address.
+      
+      ====================================================================================================================================
+      Q.19 Create a PL/SQL Block which declares the radius of a circle and make a constant pi and assign values as 3.14 to it. Find the area of circle and Print area.
+      
+ ==========================================================================================================================================================
+ q.20 PRINT ALL ALPHABETS IN UPPERCASE IN DESCENDING ORDER
+ Declare
+str varchar2(20);
+ch char(1):='Z';
+c char;
+i integer;
+begin
+i := ASCII(ch);
+     LOOP   
+            IF (i = 64) then
+                   exit;
+            END IF;
+            c := chr(i);
+              dbms_output.put_line(c);
+            i :=i-1;
+       END LOOP;
+END;
+ ================================================================================================================================================================
+ Q.21 PRINT ALL APLHABETS FROM a to z IN ASCENDING
+
+Declare
+str varchar2(20);
+ch char(1):='a';
+c char;
+i integer;
+begin
+i := ASCII(ch);
+     LOOP   
+            IF (i = 123) then
+                   exit;
+            END IF;
+            c := chr(i);
+              dbms_output.put_line(c);
+            i :=i+1;
+       END LOOP;
+END;
+ ======================================================================================================================================================================
+Q.22 PRINT ALL EVEN NUMBERS BETWEEN 10 AND 30 USING WHILE LOOP.USE IF CONDITION TO CHECK.
+
+=========================================================================================================================================================================
+Q.23 PRINT ALPHABETS IN REVERSE ORDER USING FOR LOOP.
+
+========================================================================================================================================================================
+Q.24 PRINT THE FACTORIAL OF A NUMBER USING FOR LOOP.
+===================================================================================================================================================
+Q.25 Create an array of 5 names and print all names in Capital case.
+============================================================================================================================================================
+Q.26 Create an array of 5 names and print all names with length in Capital case.
+      "abc" ===>  ABC : 3 
+      
+   DECLARE
+
+TYPE names IS VARRAY(5) OF VARCHAR(20);
+nm names;
+
+BEGIN
+nm := names('nimesh','abhishek','roma','saloni','hemant');
+for k in 1..5 loop
+dbms_output.put_line(UPPER(nm(k)) || ':' || length(nm(k)));
+
+end loop;
+end;   
+===============================================================================================================================================================      
+Q.27 CONVERT A SMALL CASE LETTER TO UPPERCASE AND PRINT IT.
+declare
+  
+  s1 varchar2(20) :='hello world';
+  begin
+  dbms_output.put_line(UPPER(s1));
+  end; 
+==================================================================================================================================================================
+Q.28 Create a procedure which accepts one parameter as a radius of circle. Declare pi as constant in the procedure and calculate area of circle & print the area in 
+     other PLSQL Block.
+ CREATE OR REPLACE PROCEDURE demo_pr6(x1 IN OUT real)  -- Defining a procedure
+IS
+     pi constant real:= 3.14;
+BEGIN
+     x1 := pi * x1 *x1;
+END;
+
+
+DECLARE
+i real;
+
+BEGIN
+    i:=2.3;
+    demo_pr6(i);      
+    dbms_output.put_line('Area of circle : '||i);
+END;
+
+  ===============================================================================================================================================================
+  Q.29 create a procedure which accepts a single parameter as a integer and it is defined as IN OUT .Procedure returns the cube of the number.
+  
+       CREATE OR REPLACE PROCEDURE demo_pr4(x1 IN integer,x2 OUT integer) 
+IS
+BEGIN
+    x2 := x1 * x1 * x1;
+END;
+
+
+DECLARE
+i integer;
+BEGIN
+    demo_pr4(5,i);        
+    dbms_output.put_line('cube is :'||i);
+END;
+=============================================================================================================================================================
+Q.30 Create following procedures :
+     Employee : eid (primary key),name (Not NULL), age (NOT NULL)
+     a) Pocedure 1 Creates a table
+     b) Pocedure 2 inserts 5 records where age of employee is greater than 18.
+     c) Procedure 3 updates a record based on the employee id.
+     d) Procedure 4 deletes a record based on employee id.
+     e) Procedure 5 shows all records.
+     f) Procedure 6 shows the record based on employee id.
+     g) Procedure 7 arranges all records age wise in ascending order.
+
+ ===============================
